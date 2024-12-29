@@ -13,7 +13,7 @@ import Logout from './pages/Logout'
 
 const App = () => {
   return (
-    <div>
+    <div >
     <BrowserRouter>
     <Navbar/>
     <Routes>
