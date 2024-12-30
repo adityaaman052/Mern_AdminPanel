@@ -477,3 +477,10 @@ button:hover {
       }
     }
   }
+
+  /* react toastify */
+  .Toastify__toast-body {
+    font-family: "Atlas Grotesk web", Arial, Helvetica, sans-serif;
+    font-size: 1.7rem;
+  }
+  
