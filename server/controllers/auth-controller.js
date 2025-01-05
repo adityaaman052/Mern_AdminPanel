@@ -24,8 +24,10 @@ const register=async(req,res)=>{
         console.log("Hashed Password:", hash_password); 
       const userCreated=  await User.create({username,email,phone,
         password: hash_password,});
+        const token=await userCreated.generateToken();
+        console.log("generated token", token)
         console.log(req.body)
-        res.status(201).json({message:"registration successful",token:await userCreated.generateToken(),userId:userCreated._id.toString(),
+        res.status(201).json({message:"registration successful",token:token,userId:userCreated._id.toString(),
 //in message, we can also write userCreated
         });
     }
@@ -52,6 +54,7 @@ const login= async(req,res)=>{
                 msg:"Login successful",
                 token: await userExist.generateToken(),
                 userId:userExist._id.toString(),
+                
             });
         }
         else{
