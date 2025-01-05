@@ -5,7 +5,11 @@ export const AuthContext=createContext();
 export const AuthProvider = ({children})=>{
     const [token, setToken] = useState(localStorage.getItem("token"))
     const [user,setUser]=useState("");
-    const [services,setServices]=useState("");
+    const [isLoading, setIsLoading] = useState(true);
+    const [services,setServices]=useState([]);
+    const authorizationToken=`Bearer ${token}`;
+
+const API=import.meta.env.APP_URI_API;
 
 const storeTokenInLS=(serverToken)=>{
     setToken(serverToken);
@@ -23,7 +27,8 @@ const LogoutUser=()=>{
 //Jwt authentication to get the currently logged in user
 const userAuthentication = async () =>{
     try{
-        const response=await fetch("http://localhost:5000/user",{
+        setIsLoading(true);
+        const response=await fetch(`${API}/user`,{
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -34,6 +39,10 @@ const userAuthentication = async () =>{
             const data=await response.json();
             console.log("user data",data.userData);
             setUser(data.userData);
+            setIsLoading(false);
+        }
+        else{
+            setIsLoading(false);
         }
     }
     catch(error){
@@ -44,13 +53,20 @@ const userAuthentication = async () =>{
 //to fetch the services from database
 const getServices=async()=>{
     try{
-        const response=await fetch("http://localhost:5000/data/service",{
-            method:"GET"
+        const response=await fetch(`${API}/data/service`,{
+            method:"GET",
+            headers:{
+                "Content-Type":"application/json",
+            },
+
         });
         if(response.ok){
             const data=await response.json();
             console.log(data.msg);
             setServices(data.msg);
+        }
+        else{
+            console.error(`Error fetching services:${response.status} ${response.statusText}`)
         }
     }
     catch(error){
@@ -65,7 +81,7 @@ useEffect(()=>{
 
 
 
-    return <AuthContext.Provider value={{isLoggedIn,storeTokenInLS,LogoutUser,user,services}}>
+    return <AuthContext.Provider value={{isLoggedIn,storeTokenInLS,LogoutUser,user,services,authorizationToken,isLoading,API}}>
         {children}
         </AuthContext.Provider>
 }

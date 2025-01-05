@@ -484,3 +484,102 @@ button:hover {
     font-size: 1.7rem;
   }
   
+  /* admin user css*/
+  /* General styling for the page */
+.admin-users-section {
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.admin-users-section h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Table styling */
+.admin-users table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.admin-users table thead {
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: left;
+}
+
+.admin-users table thead th {
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.admin-users table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.admin-users table tbody tr:hover {
+  background-color: #eaf7e8;
+}
+
+.admin-users table tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #555;
+}
+
+.admin-users table tbody td:last-child {
+  text-align: center;
+}
+
+/* Buttons for Update and Delete */
+.admin-users table tbody td:hover {
+  color: #333;
+}
+
+.admin-users table tbody td:nth-child(4),
+.admin-users table tbody td:nth-child(5) {
+  cursor: pointer;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-align: center;
+  width: 80px;
+}
+
+.admin-users table tbody td:nth-child(4) {
+  background-color: #2196F3;
+  transition: 0.3s;
+}
+
+.admin-users table tbody td:nth-child(4):hover {
+  background-color: #0d8bf2;
+}
+
+.admin-users table tbody td:nth-child(5) {
+  background-color: #f44336;
+  transition: 0.3s;
+}
+
+.admin-users table tbody td:nth-child(5):hover {
+  background-color: #e53935;
+}
