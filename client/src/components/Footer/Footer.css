@@ -1,6 +1,61 @@
-footer{
-    padding: 3.2 rem;
+footer {
+    background-color: #001f3f; /* Dark blue background */
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: auto;
     text-align: center;
-    background-color: var(--btn-color);
-    margin-top:auto;
-}
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-section {
+    flex: 1 1 30%; /* Flexible sections, minimum 30% width */
+    margin: 1rem;
+    text-align: left; /* Align content for better readability */
+  }
+  
+  .footer-brand {
+    font-size: 1.5rem; /* Bigger font for brand */
+    font-weight: bold;
+  }
+  
+  .datetime {
+    font-size: 1.2rem;
+    color: #66b3ff; /* Light blue for date and time */
+    margin-top: 0.5rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .social-icons a {
+    color: #66b3ff;
+    font-size: 1.5rem; /* Bigger icons */
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: white; /* Changes to white on hover */
+  }
+  
+  footer p {
+    margin: 0.5rem 0;
+    font-size: 1.2rem; /* Slightly larger font for all text */
+  }
+  
+  footer p svg {
+    margin-right: 0.5rem; /* Adds spacing between icon and text */
+    vertical-align: middle;
+  }
+  

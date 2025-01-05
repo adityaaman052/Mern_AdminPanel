@@ -1,0 +1,50 @@
+header {
+    background-color: #001f3f; /* Dark blue background */
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 rem;
+  }
+  
+  .logo-brand {
+    font-size: 1.8rem; /* Bigger font for "AdityAman" */
+    font-weight: bold;
+  }
+  
+  .logo-brand a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 1.5rem; /* Spacing between the links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    font-size: 1rem;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #66b3ff; /* Light blue on hover */
+  }
+  

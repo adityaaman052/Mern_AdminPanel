@@ -390,46 +390,101 @@ button:hover {
   /** -----------------------
   ** services section css
   ** -------------------------  */
-  
+  .service-heading{
+    color:black;
+  }
   .section-services {
-    & .container:first-child {
-      padding: 0;
-    }
-    & .grid-three-cols {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3.2rem;
+    padding: 4rem 2rem;
+    background-color: #f8f9fa; /* Light background */
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
     }
   
-    & .card {
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      font-weight: bold;
+      color: #001f3f; /* Dark blue */
+    }
+  
+    /* Grid Layout for Cards */
+    .grid-three-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ensure cards fit without overflow */
+      gap: 3.2rem;
+      margin-top: 3rem;
+      overflow: hidden; /* Prevent horizontal scrolling */
+    }
+  
+    /* Card Style */
+    .card {
       display: flex;
       flex-direction: column;
       gap: 3.2rem;
       border: 0.2rem solid var(--helper-color);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      height: 400px; /* Fixed height */
+      overflow: hidden;
+      background-color: white;
+      width: 100%;
+      max-width: 400px; /* Fixed width for the cards */
+      margin: 0 auto; /* Centers the card in the grid */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    }
   
-      & .card-img {
-        text-align: center;
-        & img {
-          width: 70%;
-          height: auto;
-          filter: drop-shadow(0 0 2rem 2rem #fff);
-          -webkit-filter: drop-shadow(0 0 2rem 2rem #fff);
-        }
+    /* Hover Effect */
+    .card:hover {
+      transform: translateY(-5px); /* Slight upward movement */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    }
+  
+    .card-img {
+      text-align: center;
+      padding: 2rem;
+    }
+  
+    .card-img img {
+      width: 70%;
+      height: auto;
+      max-height: 200px; /* Uniform image height */
+      filter: drop-shadow(0 0 2rem 2rem #fff);
+      -webkit-filter: drop-shadow(0 0 2rem 2rem #fff);
+    }
+  
+    .card-details {
+      padding: 2.4rem;
+      flex-grow: 1; /* Ensures consistent height for content */
+  
+      h2 {
+        font-size: 1.8rem;
+        margin: 1.2rem 0 2.4rem 0;
+        color: #001f3f; /* Dark blue */
       }
   
-      & .card-details {
-        padding: 2.4rem;
+      .grid p {
+        font-size: 1.4rem;
+        color: #555;
+      }
+    }
   
-        & .grid p {
-          font-size: 1.4rem;
-        }
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .grid-three-cols {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+        gap: 1.5rem;
+      }
   
-        & h2 {
-          font-size: 3.2rem;
-          margin: 1.2rem 0 2.4rem 0;
-        }
+      .card {
+        max-width: 100%; /* Allow cards to take full width on small screens */
+        height: auto; /* Let the card height adjust dynamically */
       }
     }
   }
+  
   
   /** -----------------------
   ** media query section css
